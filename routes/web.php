@@ -19,6 +19,6 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::resource('todo-lists', App\Http\Controllers\TodoListController::class); 
+Route::resource('todo-lists', App\Http\Controllers\TodoListController::class)->middleware('auth'); 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
